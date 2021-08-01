@@ -1,4 +1,4 @@
-FlingBot()
+Bot()
 
 game.Players.LocalPlayer.Character['CALYPSOXLIGHTSEER77Accessory'].Handle.AccessoryWeld:Destroy()
 local Weldname = Instance.new('Weld')
