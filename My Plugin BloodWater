@@ -1372,46 +1372,9 @@ function ParticleEmitter(Table)
 	return PRTCL
 end
 
-local LASTPART = Torso
-for i = 1, 45 do
-	local MATH = 1 - i / 60
-	if LASTPART == Torso then
-		local Tail = CreatePart(3, Character, "Neon", 0, 0, "", "Tail", VT(0.25 * MATH, 0.25, 0.25 * MATH), false)
-		local WLD = CreateWeldOrSnapOrMotor("Weld", LASTPART, LASTPART, Tail, CF(0, -0.75, 0.5) * ANGLES(RAD(90), RAD(0), RAD(0)), CF(0, 0, 0))
-		LASTPART = Tail	
-		Tail.Color =  Color3.new(sick.PlaybackLoudness/500,0,0)
-		Tail.Material = Enum.Material.Neon
-		table.insert(TAIL, WLD)
-		coroutine.resume(coroutine.create(function()
-			while true do
-				Swait()
-				Tail.Color = Color3.new(sick.PlaybackLoudness/500,0,0)
-			end
-		end))
-	else
-		local Tail = CreatePart(3, Character, "Neon", 0, 0, "", "Tail", VT(0.25 * MATH, 0.25, 0.25 * MATH), false)
-		local WLD = CreateWeldOrSnapOrMotor("Weld", LASTPART, LASTPART, Tail, CF(0, Tail.Size.Y / 2, 0) * ANGLES(RAD(-1.2), RAD(0), RAD(0)), CF(0, 0, 0))
-		LASTPART = Tail
-		Tail.Material = Enum.Material.Neon
-		table.insert(TAIL, WLD)
-		coroutine.resume(coroutine.create(function()
-			while true do
-				Swait()
-				Tail.Color =  Color3.new(sick.PlaybackLoudness/500,0,0)
-			end
-		end))
-		
-	end
-end
 
-local Heads = IT("Folder", Character)
-Heads.Name = "Heads"
 
-local PRT = CreatePart(3, Heads, "Fabric", 0, 0, "Really black", "Hood", VT(1,1,1),false)
 
-local HoodWeld = CreateWeldOrSnapOrMotor("Weld", Head, Head, PRT, CF(0,0.85,0), CF(0, 0, 0))
-CreateMesh("SpecialMesh", PRT, "FileMesh", 471124075, "", VT(1,1,1)*0.009, VT(0,0,0))
-PRT.Material = Enum.Material.Neon
 
 coroutine.resume(coroutine.create(function()
 	while wait() do
@@ -1433,14 +1396,7 @@ end))
 local Blk = CreatePart(0,LeftArm,"Neon",1,1,Color3.new(0.596078, 0.705882, 1),"aa",VT(0.005,0.005,0.005),false)
 local BW = CreateWeldOrSnapOrMotor("Weld",LeftArm,LeftArm,Blk,CF(0,-2,0),CF(0,0,0))
 
-local FaceGradient = IT("Folder", Character)
-FaceGradient.Name = "FaceGradient"
-for i = 1, 50 do
-	local FACE = CreatePart(3, FaceGradient, "Fabric", 0, 0+(i-1)/35.2, "Dark stone grey", "FaceGradient", VT(1.01,0.5,1.01),false)
-	FACE.Color = C3(0,0,0)
-	Head:FindFirstChildOfClass("SpecialMesh"):Clone().Parent = FACE
-	CreateWeldOrSnapOrMotor("Weld", Head, Head, FACE, CF(0,0.35-(i-1)/75,0), CF(0, 0, 0))
-end
+
 
 
 function MakeForm(PART,TYPE)
@@ -1519,60 +1475,6 @@ Blur.Parent = LIGHT
 --\=================================//
 
 
-local LASTPART = Head
-for i = 1, 35 do
-	local MATH = (1-(i/20))
-	if LASTPART == Head then
-		local Horn = CreatePart2(3, Character, "Neon", 0, 0, "Black", "Horn", VT(0.25*MATH,0.25,0.25*MATH),false)
-		CreateWeldOrSnapOrMotor2("Weld", LASTPART, LASTPART, Horn, CF(0.3, 0.7, -0.35) * ANGLES(RAD(-55), RAD(15), RAD(-15)), CF(0, 0, 0))
-		LASTPART = Horn
-		coroutine.resume(coroutine.create(function()
-			while true do
-			Swait()
-			Horn.Color = Color3.new(sick.PlaybackLoudness/255,255,255)
-			end
-	end))
-	else
-		local Horn = CreatePart2(3, Character, "Neon", 0, 0, "Black", "Horn", VT(0.25*MATH,0.25,0.25*MATH),false)
-		CreateWeldOrSnapOrMotor2("Weld", LASTPART, LASTPART, Horn, CF(0, Horn.Size.Y/3.8, 0) * ANGLES(RAD(6), RAD(-0.3), RAD(0)), CF(0, 0, 0))
-		LASTPART = Horn
-		Horn.Color = Color3.new(sick.PlaybackLoudness/255,255,255)
-        Horn.Material = "Neon"
-		coroutine.resume(coroutine.create(function()
-		while true do
-		Swait()
-		Horn.Color = Color3.new(sick.PlaybackLoudness/255,255,255)
-		end
-	end))
-	end
-	end
-local LASTPART = Head
-for i = 1, 35 do
-	local MATH = (1-(i/20))
-	if LASTPART == Head then
-		local Horn = CreatePart2(3, Character, "Neon", 0, 0, "Black", "Horn", VT(0.25*MATH,0.25,0.25*MATH),false)
-		CreateWeldOrSnapOrMotor2("Weld", LASTPART, LASTPART, Horn, CF(-0.3, 0.7, -0.35) * ANGLES(RAD(-55), RAD(-15), RAD(15)), CF(0, 0, 0))
-		LASTPART = Horn
-		coroutine.resume(coroutine.create(function()
-			while true do
-				Swait()
-				Horn.Color = Color3.new(sick.PlaybackLoudness/255,255,255)
-			end
-		end))
-	else
-		local Horn = CreatePart2(3, Character, "Neon", 0, 0, "Black", "Horn", VT(0.25*MATH,0.25,0.25*MATH),false)
-		CreateWeldOrSnapOrMotor2("Weld", LASTPART, LASTPART, Horn, CF(0, Horn.Size.Y/3.8, 0) * ANGLES(RAD(6), RAD(0.3), RAD(0)), CF(0, 0, 0))
-		LASTPART = Horn
-		Horn.Color = C3(255,255,255)
-		Horn.Material = "Neon"
-		coroutine.resume(coroutine.create(function()
-			while true do
-				Swait()
-			Horn.Color = Color3.new(sick.PlaybackLoudness/255,255,255)
-			end
-		end))
-	end
-end
 
 local Particle = IT("ParticleEmitter",nil)
 Particle.Enabled = false
@@ -1583,7 +1485,6 @@ Particle.ZOffset = 0.2
 Particle.Rotation = NumberRange.new(-180, 180)--You can change the rot
 Particle.RotSpeed = NumberRange.new(-180, 180)---You can change the rotspeed
 Particle.Texture = "http://www.roblox.com/asset/?id=304437537"--You can change the texture
-
 --ParticleEmitter({Speed = 5, Drag = 0, Size1 = 1, Size2 = 5, Lifetime1 = 1, Lifetime2 = 1.5, Parent = Torso, Emit = 100, Offset = 360, Enabled = false})
 function ParticleEmitter(Table)
 	local PRTCL = Particle:Clone()
